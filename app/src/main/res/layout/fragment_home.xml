@@ -1,0 +1,26 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#949494"
+    tools:context="nmrapp.nmrtutor.HomeFragment">
+
+    <GridView
+        android:id="@+id/gridView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@mipmap/welcomebackground"
+        android:columnWidth="35dp"
+        android:gravity="center"
+        android:horizontalSpacing="15dp"
+        android:listSelector="#ffffff"
+        android:numColumns="5"
+        android:paddingTop="40dp"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="10dp">
+
+
+    </GridView>
+
+</RelativeLayout>
