@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="Questions_1_promt">Chose Best Fit Answer </string>
 
+    <string-array name="Questions_1">
+
+
+        <item>Good</item>
+        <item>Bad</item>
+        <item>Well</item>
+        <item>Excellent</item>
+
+
+
+
+
+    </string-array>
 
 
 

@@ -10,7 +10,7 @@ public class urlPasser {
     static String irUrl;
     static String cnmrUrl;
 
-    static String nmrProb;
+
 
 
 

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="nmrapp.nmrtutor.QuestionActivity">
+    tools:context="nmrapp.nmrtutor.ProblemActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
@@ -49,6 +49,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="CNMR SPECTRA" />
+
 
         </android.support.design.widget.TabLayout>
     </android.support.design.widget.AppBarLayout>

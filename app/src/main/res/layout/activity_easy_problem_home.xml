@@ -7,7 +7,7 @@
     android:background="@mipmap/welcomebackground"
     android:theme="@style/NMRTheme"
     android:id="@+id/homeDrawerLayout"
-    tools:context="nmrapp.nmrtutor.HomeActivity">
+    tools:context="nmrapp.nmrtutor.EasyProblemHomeActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -15,7 +15,7 @@
 
         <fragment
             android:id="@+id/fragment_place"
-            android:name="nmrapp.nmrtutor.HomeFragment"
+            android:name="nmrapp.nmrtutor.EasyHomeFragment"
             android:layout_width="match_parent"
             android:layout_height="400dp"
             android:layout_alignParentBottom="true"
@@ -41,7 +41,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="39dp"
             android:fontFamily="serif-monospace"
-            android:text="Problems Sets Menu"
+            android:text="Easy Problems Sets Menu"
             android:textAlignment="center"
             android:textColor="@android:color/background_light"
             android:textSize="32sp"

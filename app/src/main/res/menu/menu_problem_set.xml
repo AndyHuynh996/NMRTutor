@@ -1,9 +1,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="nmrapp.nmrtutor.ProblemSetActivity">
+    tools:context="nmrapp.nmrtutor.ProblemActivity">
     <item
         android:id="@+id/action_probHome"
+        android:icon="@drawable/chalkboardicon_2"
         android:orderInCategory="100"
         android:title="Problems Menu"
         app:showAsAction="never" />

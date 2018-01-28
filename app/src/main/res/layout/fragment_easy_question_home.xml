@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#949494"
-    tools:context="nmrapp.nmrtutor.HomeFragment">
+    tools:context="nmrapp.nmrtutor.EasyHomeFragment">
 
     <GridView
         android:id="@+id/gridView1"

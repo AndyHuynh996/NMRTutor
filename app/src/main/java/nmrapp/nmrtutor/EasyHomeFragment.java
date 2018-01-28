@@ -1,9 +1,7 @@
 package nmrapp.nmrtutor;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -13,11 +11,11 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
-import com.squareup.picasso.Picasso;
+/**
+Purpose : Create problem selector grid view and acquire questions on select item
 
-
-
-public class HomeFragment extends Fragment {
+ */
+public class EasyHomeFragment extends Fragment {
     public interface OnSelectedListener {
         public void onSelected();
 
@@ -37,13 +35,13 @@ public class HomeFragment extends Fragment {
     GridView gridview;
 
 
-    Intent i;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.fragment_home, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_easy_question_home, container, false);
         gridview = (GridView)rootView.findViewById(R.id.gridView1);
         gridview.setAdapter(new ImageAdapter(gridview.getContext()));
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -53,7 +51,7 @@ public class HomeFragment extends Fragment {
 
                 uP.setUrl(position);
 
-                startActivity(new Intent(getActivity(),ProblemSetActivity.class));
+                startActivity(new Intent(getActivity(),ProblemActivity.class));
                 Toast.makeText(getActivity(), " " + position, Toast.LENGTH_SHORT).show();
             }
 

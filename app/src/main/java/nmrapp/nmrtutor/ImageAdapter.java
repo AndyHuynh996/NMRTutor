@@ -9,6 +9,7 @@ import android.widget.ImageView;
 
 /**
  * Created by Andyh on 1/11/2018.
+ * Purpose: Create image for grid view
  */
 
 public class ImageAdapter extends BaseAdapter {

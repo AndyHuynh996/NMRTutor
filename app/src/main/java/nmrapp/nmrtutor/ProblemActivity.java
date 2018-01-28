@@ -3,10 +3,7 @@ package nmrapp.nmrtutor;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomSheetBehavior;
-import android.support.design.widget.BottomSheetDialogFragment;
 import android.support.design.widget.TabLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -15,23 +12,19 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 
-import android.widget.Button;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
+import java.util.ArrayList;
 
 
-
-public class ProblemSetActivity extends AppCompatActivity {
+public class ProblemActivity extends AppCompatActivity {
 
     PinchZoomImageView mPinchZoomImageView;
     private SectionsPagerAdapter mSectionsPagerAdapter;
@@ -41,7 +34,7 @@ public class ProblemSetActivity extends AppCompatActivity {
 
     LinearLayout llBottomsheet;
 
-
+    private ArrayList<String> q1Answer;
 
 
 
@@ -49,7 +42,7 @@ public class ProblemSetActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_problem_set);
+        setContentView(R.layout.activity_problem);
 
         llBottomsheet = (LinearLayout) findViewById(R.id.bottom_sheet);
 
@@ -75,17 +68,33 @@ public class ProblemSetActivity extends AppCompatActivity {
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
 
         final TextView question1 = (TextView) findViewById(R.id.question);
+        final Spinner q1Spinner = (Spinner) findViewById(R.id.Q1spinner);
+
+
+
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-
+                q1Answer = new ArrayList<String>();
                 switch (tab.getPosition()){
                     case 0 :
-                        question1.setText("Hello");
+                        question1.setText("How was your day?");
+
+                        q1Answer.add("Good");
+                        q1Answer.add("Well");
+                        q1Answer.add("NotGood");
+                        spinnerset(q1Answer,q1Spinner);
+
+
                         break;
                     case 1 :
-                        question1.setText("Hello");
+                        question1.setText("Hows the weather?");
+                        q1Answer.add("Sunny");
+                        q1Answer.add("Raining");
+                        q1Answer.add("Snowing");
+                        spinnerset(q1Answer,q1Spinner);
+
                         break;
                     default:
                         question1.setText("Hello");
@@ -131,6 +140,19 @@ public class ProblemSetActivity extends AppCompatActivity {
 
     }
 
+    public void spinnerset(ArrayList<String> list, Spinner spinner){
+
+
+
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,list);
+
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+
+        spinner.setAdapter(dataAdapter);
+
+    }
+
 
 
     @Override
@@ -149,7 +171,7 @@ public class ProblemSetActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_probHome) {
-            startActivity(new Intent(ProblemSetActivity.this,HomeActivity.class));
+            startActivity(new Intent(ProblemActivity.this,EasyProblemHomeActivity.class));
         }
 
         return super.onOptionsItemSelected(item);
@@ -174,6 +196,7 @@ public class ProblemSetActivity extends AppCompatActivity {
                 case 2:
                     cnmrFragment tab3 = new cnmrFragment();
                     return tab3;
+
                 default:
                     return null;
 

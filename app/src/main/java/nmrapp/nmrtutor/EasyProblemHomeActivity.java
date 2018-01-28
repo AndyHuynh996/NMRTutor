@@ -9,7 +9,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-public class HomeActivity extends AppCompatActivity implements HomeFragment.OnSelectedListener,NavigationView.OnNavigationItemSelectedListener {
+/**
+Purpose: The Easy Question Home with the implements of EasyHomeFragment to acquire custom view
+ */
+public class EasyProblemHomeActivity extends AppCompatActivity implements EasyHomeFragment.OnSelectedListener,NavigationView.OnNavigationItemSelectedListener {
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
@@ -17,7 +20,7 @@ public class HomeActivity extends AppCompatActivity implements HomeFragment.OnSe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_easy_problem_home);
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.homeDrawerLayout);
         mToggle = new ActionBarDrawerToggle(this,mDrawerLayout,R.string.open, R.string.close);
@@ -60,9 +63,9 @@ public class HomeActivity extends AppCompatActivity implements HomeFragment.OnSe
         int id = item.getItemId();
 
         if(id == R.id.homeItem){
-            startActivity(new Intent(HomeActivity.this,MainActivity.class));
+            startActivity(new Intent(EasyProblemHomeActivity.this,MainActivity.class));
         }else if (id == R.id.Prob){
-            startActivity(new Intent(HomeActivity.this,HomeActivity.class));
+            startActivity(new Intent(EasyProblemHomeActivity.this,EasyProblemHomeActivity.class));
         }
         return false;
     }
